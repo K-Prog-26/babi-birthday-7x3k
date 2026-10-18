@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, My Love</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4cc;--card:#fffbea;--ink:#3b2314;--soft:#7a5638;--rose:#a86a00;--blush:#fbdf85;--gold:#6f4325;--bi:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241609;--card:#35210f;--ink:#fff1cc;--soft:#e0bf86;--rose:#f6c515;--blush:#5a3a1a;--gold:#f2d37a;--bi:#2a1707}}
+:root[data-theme="dark"]{--bg:#241609;--card:#35210f;--ink:#fff1cc;--soft:#e0bf86;--rose:#f6c515;--blush:#5a3a1a;--gold:#f2d37a;--bi:#2a1707}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-style:italic;margin:0}
+main{max-width:520px;margin:0 auto;padding:0 20px 60px}
+section{padding:44px 0 8px}
+h2{font-size:34px;line-height:1.15;margin-bottom:6px}
+.sub{color:var(--soft);margin:0 0 22px}
+.hero{text-align:center;padding-top:56px}
+h1{font-size:clamp(46px,14vw,72px);line-height:1;color:var(--rose)}
+.hero p{color:var(--soft)}
+.count{display:flex;justify-content:center;gap:10px;margin:24px 0 6px}
+.count div{background:var(--card);border-radius:18px;padding:12px 6px;min-width:70px;box-shadow:0 2px 0 var(--blush)}
+.count b{display:block;font:italic 500 32px "Cormorant Garamond",Georgia,serif;color:var(--rose)}
+.count span{font-size:13px;color:var(--soft)}
+.btn{font:600 16px Nunito,sans-serif;background:var(--rose);color:var(--bi);border:0;border-radius:999px;padding:12px 26px;cursor:pointer}
+.btn:focus-visible,.env:focus-visible,.card:focus-visible,.opt:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.env{display:block;width:100%;border:0;background:var(--rose);color:var(--bi);border-radius:20px;padding:44px 20px;cursor:pointer;font:italic 500 28px "Cormorant Garamond",Georgia,serif;transition:transform .2s}
+.env:active{transform:scale(.98)}
+.letter{background:var(--card);border-radius:20px;padding:26px 24px;border:2px solid var(--blush);display:none}
+.letter.open{display:block;animation:unfold .6s ease}
+.letter p{margin:0 0 14px;font-family:"Cormorant Garamond",Georgia,serif;font-size:21px;line-height:1.55;font-style:italic}
+.sign{text-align:right;color:var(--rose)}
+@keyframes unfold{from{opacity:0;transform:scaleY(.6);transform-origin:top}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--card);border:2px solid var(--blush);border-radius:18px;padding:0;cursor:pointer;text-align:left;color:inherit;font:inherit;overflow:hidden}
+.ph{aspect-ratio:1;background:var(--blush) center/cover;display:flex;align-items:center;justify-content:center;font-size:34px}
+.cap{padding:10px 12px;font-size:15px}
+.cap small{display:block;color:var(--soft);margin-top:4px}
+.note{display:none}.card.on .note{display:block}
+.quiz{background:var(--card);border-radius:20px;padding:22px;border:2px solid var(--blush)}
+.q{font:italic 500 25px/1.25 "Cormorant Garamond",Georgia,serif;margin:0 0 14px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);color:var(--ink);border:2px solid var(--blush);border-radius:14px;padding:11px 14px;margin-bottom:10px;font:inherit;cursor:pointer}
+.opt.good{border-color:var(--rose);background:var(--blush)}
+.fb{color:var(--rose);min-height:26px;margin:4px 0 12px}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.hearts i{position:absolute;bottom:-30px;font-style:normal;animation:rise 4s ease-in forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.letter.open{animation:none}.hearts{display:none}#cf{transition:none}.full .steam{animation:none;opacity:.5}}
+.cup{display:block;margin:20px auto 0;background:none;border:0;cursor:pointer;color:var(--soft);font:italic 500 21px "Cormorant Garamond",Georgia,serif}
+.cup:focus-visible{outline:3px solid var(--gold);outline-offset:6px;border-radius:12px}
+.cup svg{width:200px;height:auto;display:block;margin:0 auto 4px}
+.cb{fill:var(--card);stroke:var(--ink);stroke-width:3}.sc{fill:var(--blush);stroke:var(--ink);stroke-width:3}.hd{fill:none;stroke:var(--ink);stroke-width:3}
+#cf{transform:translateY(85px);transition:transform 1.8s cubic-bezier(.3,.7,.3,1)}.full #cf{transform:none}
+#ht{opacity:0;transition:opacity 1s 1.8s}.full #ht{opacity:1}
+.steam{opacity:0;fill:none;stroke:var(--soft);stroke-width:3;stroke-linecap:round}
+.full .steam{animation:steam 3s 1.8s infinite}
+@keyframes steam{0%{opacity:0;transform:translateY(8px)}40%{opacity:.7}100%{opacity:0;transform:translateY(-14px)}}
+.cpn{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px dashed var(--rose);border-radius:14px;padding:14px 16px;margin-bottom:12px;font:inherit;cursor:pointer}
+.cpn small{display:block;color:var(--soft)}
+.cpn.used{border-style:solid;background:var(--blush)}
+.edbtn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:48px;height:48px;border-radius:50%;border:0;background:var(--rose);color:var(--bi);font-size:22px;cursor:pointer;z-index:5;opacity:.88}
+.edbtn[hidden],.ed[hidden]{display:none}
+.edbtn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.ed{position:fixed;inset:0;z-index:10;overflow:auto;background:var(--bg);padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(40px + env(safe-area-inset-bottom,0px))}
+.ed label{display:block;margin:14px 0 4px;font-weight:600}
+.ed input,.ed textarea,.ed select{display:block;width:100%;font:inherit;color:var(--ink);background:var(--card);border:2px solid var(--blush);border-radius:12px;padding:9px 12px;margin-top:4px}
+.ed textarea{min-height:110px}
+.mrow{display:grid;grid-template-columns:52px 1fr 1.4fr 44px;gap:6px;margin-bottom:6px}
+.mrow input{margin:0}.mrow .btn{padding:0}
+.btn.ghost{background:none;color:var(--rose);border:2px solid var(--rose)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+footer{text-align:center;color:var(--soft);padding-top:36px}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <p id="kicker">For my favorite person, over a warm cup of coffee</p>
+  <h1 id="title">Happy Birthday</h1>
+  <button class="cup" id="cup" aria-label="Pour your birthday coffee"><svg viewBox="0 0 170 150" aria-hidden="true"><defs><clipPath id="cl"><path d="M30 44H120V85Q120 125 75 125Q30 125 30 85Z"/></clipPath></defs><path class="steam" d="M58 34q-8-10 0-18t0-14"/><path class="steam" style="animation-delay:2.4s" d="M76 34q-8-10 0-18t0-14"/><path class="steam" style="animation-delay:3s" d="M94 34q-8-10 0-18t0-14"/><ellipse class="sc" cx="75" cy="132" rx="62" ry="9"/><path class="hd" d="M120 55q30 0 30 24t-30 24"/><path class="cb" d="M30 44H120V85Q120 125 75 125Q30 125 30 85Z"/><g clip-path="url(#cl)"><g id="cf"><rect x="28" y="52" width="94" height="90" fill="#5a3417"/><path id="ht" d="M75 80c-7-11-24-4-16 8l16 16 16-16c8-12-9-19-16-8z" fill="#fff1cc"/></g></g></svg><span id="cuphint">Tap your cup</span></button>
+  <p id="next">Counting down to your day</p>
+  <div class="count" id="count"></div>
+</section>
+
+<section id="letter">
+  <h2>A letter, just for you</h2>
+  <p class="sub">Tap the envelope.</p>
+  <button class="env" id="env">Open your letter ☕</button>
+  <div class="letter" id="lt"></div>
+</section>
+
+<section id="mem">
+  <h2>Our little moments</h2>
+  <p class="sub">Tap a memory. Tap the picture area to add a photo.</p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="game">
+  <h2>How well do you know us?</h2>
+  <p class="sub">Every answer is right. Some are just more right.</p>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section id="cp">
+  <h2>Birthday coupons</h2>
+  <p class="sub">Yours to keep. Tap one to redeem it.</p>
+  <div id="cps"></div>
+</section>
+
+<footer class="serif" id="foot"></footer>
+</main>
+<button class="edbtn" id="edbtn" aria-label="Customize this app">✎</button>
+<div class="ed" id="ed" hidden></div>
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<script>
+/* ===== EDIT THESE ===== */
+var CFG={
+  name:"Babi",            // her name
+  from:"Your Babi",                 // your name
+  month:12, day:11,          // her birthday (month 1-12, day)
+  letter:[
+    "Happy birthday, Babi.",
+    "You make every ordinary moment feel like the first sip of coffee in the morning: warm, bright, and exactly what I needed. I am so grateful you are mine.",
+    "This year, I hope you feel as loved as you make me feel. Thank you for being exactly who you are.",
+    "I love you, today and always."
+  ],
+  memories:[
+    {t:"Cinema date",n:"I watched the screen less than I watched you.",e:"🎬"},
+    {t:"Beach date",n:"Sand, sunshine, and you. Perfect.",e:"🏖️"},
+    {t:"Our coffee dates",n:"The best part of any morning is you and a warm cup.",e:"☕"},
+    {t:"Camping",n:"Under the stars is my favorite place to be with you.",e:"⛺"},
+    {t:"Watching fireworks",n:"The sky lit up, but you were the brightest thing there.",e:"🎆"},
+    {t:"Museum date",n:"My favorite piece of art was you.",e:"🖼️"}
+  ],
+  quiz:[
+    {q:"What is my favorite thing about us?",o:["The laughing","The quiet moments","Everything, obviously"],a:2,f:"Everything. Yes."},
+    {q:"Who loves who more?",o:["You love me more","I love you more","We tie, forever"],a:2,f:"A forever tie. Perfect."},
+    {q:"What should we do next?",o:["Grab our favorite coffee","Make more memories","Both, together"],a:2,f:"Both. Always both."}
+  ],
+  coupons:["A coffee date, my treat","Movie night, you pick the film","Breakfast in bed","One long hug, anytime","A day trip, your choice"],
+  end:"You got every one right. Here is your last surprise: I love you more than words, and I will keep proving it."
+};
+var THEMES={rose:{bg:"#fdeef0",card:"#fff8f9",ink:"#4a1730",soft:"#8a4a62",rose:"#c53d68",blush:"#f6c1cd",gold:"#c28f4e",bi:"#fff"},lav:{bg:"#f1ecfb",card:"#faf7ff",ink:"#2d1b4e",soft:"#6a5a8c",rose:"#7a4fc4",blush:"#d9ccf3",gold:"#a8741f",bi:"#fff"},mint:{bg:"#e6f6ee",card:"#f6fcf9",ink:"#143a2a",soft:"#4a7a64",rose:"#1f8a5b",blush:"#bfe6d2",gold:"#a8741f",bi:"#fff"},night:{bg:"#241609",card:"#35210f",ink:"#fff1cc",soft:"#e0bf86",rose:"#f6c515",blush:"#5a3a1a",gold:"#f2d37a",bi:"#2a1707"}};
+try{var sv=localStorage.getItem("bdayCFG");if(sv){var ov=JSON.parse(sv);for(var k0 in ov)CFG[k0]=ov[k0]}}catch(e){}
+(function(){var t=THEMES[CFG.theme];if(t)for(var k in t)document.documentElement.style.setProperty("--"+k,t[k])})();
+/* ======================= */
+var $=function(i){return document.getElementById(i)};
+$("title").textContent="Happy Birthday, "+CFG.name;
+$("foot").textContent="With all my love, "+CFG.from+" ♥";
+
+function nextBday(){var n=new Date(),y=n.getFullYear(),d=new Date(y,CFG.month-1,CFG.day);
+  var t=new Date(y,n.getMonth(),n.getDate());
+  if(d<t)d=new Date(y+1,CFG.month-1,CFG.day);return d}
+function tick(){var now=new Date(),b=nextBday(),today=now.getMonth()==CFG.month-1&&now.getDate()==CFG.day;
+  if(today){$("next").textContent="Today is your day. 🎂";$("count").innerHTML="";return}
+  var ms=b-now,d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60;
+  $("next").textContent="Until your next birthday";
+  $("count").innerHTML=[[d,"days"],[h,"hours"],[m,"min"],[s,"sec"]].map(function(x){return"<div><b>"+x[0]+"</b><span>"+x[1]+"</span></div>"}).join("")}
+tick();setInterval(tick,1000);
+
+function burst(){var h=$("hearts"),c=["☕","💛","🌼","✨","💛"];
+  for(var i=0;i<24;i++){var e=document.createElement("i");e.textContent=c[i%c.length];
+    e.style.left=Math.random()*100+"%";e.style.fontSize=(18+Math.random()*22)+"px";e.style.animationDelay=(Math.random()*1.2)+"s";h.appendChild(e)}
+  setTimeout(function(){h.innerHTML=""},6000)}
+
+$("lt").innerHTML=CFG.letter.map(function(p){return"<p>"+p+"</p>"}).join("")+'<p class="sign">— '+CFG.from+'</p>';
+$("env").onclick=function(){this.style.display="none";$("lt").classList.add("open");burst()};
+
+$("grid").innerHTML=CFG.memories.map(function(m,i){
+  return'<div class="card" tabindex="0" role="button" data-i="'+i+'"><div class="ph" data-ph="'+i+'"'+(m.img?' style="background-image:url('+m.img+')"':'')+'>'+(m.img?'':m.e)+'</div><div class="cap">'+m.t+'<small class="note">'+m.n+'</small></div></div>'}).join("");
+var inp=document.createElement("input");inp.type="file";inp.accept="image/*";inp.hidden=true;document.body.appendChild(inp);
+var target=null;
+inp.onchange=function(){var f=inp.files[0];if(!f||!target)return;var ph=target,i=+ph.getAttribute("data-ph");
+  shrink(f,function(u){ph.style.backgroundImage="url("+u+")";ph.textContent="";CFG.memories[i].img=u;persist()})};
+document.querySelectorAll(".card").forEach(function(c){
+  function tog(ev){var ph=ev.target.closest(".ph");if(ph){target=ph;inp.value="";inp.click();return}c.classList.toggle("on")}
+  c.onclick=tog;c.onkeydown=function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();c.classList.toggle("on")}}});
+
+$("cup").onclick=function(){if(this.classList.contains("full"))return;this.classList.add("full");$("cuphint").textContent="Made just for you, "+CFG.name+" ☕";setTimeout(burst,1800)};
+$("cps").innerHTML=CFG.coupons.map(function(c){return'<button class="cpn">'+c+'<small>Tap to redeem</small></button>'}).join("");
+document.querySelectorAll(".cpn").forEach(function(b){b.onclick=function(){if(b.classList.contains("used"))return;b.classList.add("used");b.lastChild.textContent="Redeemed ♥";burst()}});
+
+var qi=0;
+function showQ(){var Q=CFG.quiz,box=$("quiz");
+  if(qi>=Q.length){box.innerHTML='<p class="q">'+CFG.end+'</p><button class="btn" id="again">Play again</button>';burst();
+    $("again").onclick=function(){qi=0;showQ()};return}
+  var q=Q[qi];box.innerHTML='<p class="q">'+q.q+'</p>'+q.o.map(function(o,i){return'<button class="opt" data-i="'+i+'">'+o+'</button>'}).join("")+'<p class="fb" id="fb" aria-live="polite"></p>';
+  box.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){
+    var i=+b.dataset.i;box.querySelectorAll(".opt").forEach(function(x){x.disabled=true});
+    b.classList.add("good");$("fb").textContent=(i==q.a?"":"Sweet answer. ")+q.f;
+    setTimeout(function(){qi++;showQ()},1600)}})}
+showQ();
+
+var NL=String.fromCharCode(10),ED=$("ed"),wm=[];
+function persist(){try{localStorage.setItem("bdayCFG",JSON.stringify(CFG))}catch(e){alert("Not enough storage. Try fewer or smaller photos.")}}
+function shrink(f,cb){var im=new Image();im.onload=function(){var s=Math.min(1,480/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",.75))};im.src=URL.createObjectURL(f)}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;")}
+function lines(s){return s.split(NL).map(function(x){return x.trim()}).filter(Boolean)}
+function parseQ(s){return lines(s).map(function(l){var p=l.split("|").map(function(x){return x.trim()});if(p.length<4)return null;var o=p.slice(1,-2),a=(+p[p.length-2])-1;return{q:p[0],o:o,a:(a>=0&&a<o.length)?a:0,f:p[p.length-1]}}).filter(Boolean)}
+function mrows(){$("mr").innerHTML=wm.map(function(m,i){return'<div class="mrow"><input data-k="e" data-i="'+i+'" value="'+esc(m.e)+'" aria-label="Emoji"><input data-k="t" data-i="'+i+'" value="'+esc(m.t)+'" aria-label="Title"><input data-k="n" data-i="'+i+'" value="'+esc(m.n)+'" aria-label="Note"><button class="btn ghost" data-rm="'+i+'" aria-label="Remove memory">×</button></div>'}).join("")}
+function openEd(){
+ wm=CFG.memories.map(function(m){return{t:m.t,n:m.n,e:m.e,img:m.img}});
+ var d=("0"+CFG.month).slice(-2)+"-"+("0"+CFG.day).slice(-2),th=[["","Sunny yellow (dark at night)"],["rose","Rose"],["lav","Lavender"],["mint","Mint"],["night","Coffee night"]],qs=CFG.quiz.map(function(q){return[q.q].concat(q.o,[q.a+1,q.f]).join(" | ")}).join(NL);
+ ED.innerHTML='<div style="max-width:520px;margin:auto"><h2>Customize</h2><p class="sub">Change anything, then tap Save.</p>'
+ +'<label>Her name or nickname<input id="f_name" value="'+esc(CFG.name)+'"></label>'
+ +'<label>Your name, as you sign it<input id="f_from" value="'+esc(CFG.from)+'"></label>'
+ +'<label>Her birthday<input id="f_bd" type="date" value="2000-'+d+'"></label>'
+ +'<label>Letter (one paragraph per line)<textarea id="f_let">'+esc(CFG.letter.join(NL))+'</textarea></label>'
+ +'<label>Memories (emoji, title, note)</label><div id="mr"></div><button class="btn ghost" id="addm">Add a memory</button>'
+ +'<label>Coupons (one per line)<textarea id="f_cp">'+esc(CFG.coupons.join(NL))+'</textarea></label>'
+ +'<label>Quiz (one per line: question | option | option | option | right answer number | reply)<textarea id="f_q">'+esc(qs)+'</textarea></label>'
+ +'<label>Quiz ending message<textarea id="f_end">'+esc(CFG.end)+'</textarea></label>'
+ +'<label>Look<select id="f_th">'+th.map(function(x){return'<option value="'+x[0]+'"'+((CFG.theme||"")==x[0]?" selected":"")+'>'+x[1]+'</option>'}).join("")+'</select></label>'
+ +'<div class="bar"><button class="btn" id="sv">Save</button><button class="btn ghost" id="cx">Cancel</button></div>'
+ +'<label>Backup code (copy it to move your gift to another phone, or paste one here)<textarea id="f_bk">'+esc(JSON.stringify(CFG))+'</textarea></label>'
+ +'<div class="bar"><button class="btn ghost" id="ld">Load code</button><button class="btn ghost" id="hd">Hide this button</button><button class="btn ghost" id="rs">Reset</button></div><p class="sub">To bring this button back after hiding it, tap the footer text five times.</p></div>';
+ mrows();ED.hidden=false;ED.scrollTop=0}
+ED.oninput=function(e){var k=e.target.getAttribute("data-k");if(k)wm[+e.target.getAttribute("data-i")][k]=e.target.value};
+ED.onclick=function(e){var t=e.target,id=t.id;
+ if(t.getAttribute("data-rm")!==null){wm.splice(+t.getAttribute("data-rm"),1);mrows()}
+ else if(id=="addm"){wm.push({t:"New memory",n:"Something sweet",e:"💛"});mrows()}
+ else if(id=="cx"){ED.hidden=true}
+ else if(id=="sv"){var bd=$("f_bd").value.split("-");CFG.name=$("f_name").value||CFG.name;CFG.from=$("f_from").value||CFG.from;if(bd.length==3){CFG.month=+bd[1];CFG.day=+bd[2]}
+  CFG.letter=lines($("f_let").value);CFG.memories=wm.filter(function(m){return m.t});CFG.coupons=lines($("f_cp").value);CFG.quiz=parseQ($("f_q").value);CFG.end=$("f_end").value;CFG.theme=$("f_th").value;persist();location.reload()}
+ else if(id=="ld"){try{var o=JSON.parse($("f_bk").value);for(var k in o)CFG[k]=o[k];persist();location.reload()}catch(x){alert("That code is not valid.")}}
+ else if(id=="hd"){CFG.hideEd=true;persist();location.reload()}
+ else if(id=="rs"){if(confirm("Reset everything to the original?")){try{localStorage.removeItem("bdayCFG")}catch(x){}location.reload()}}};
+$("edbtn").onclick=openEd;if(CFG.hideEd)$("edbtn").hidden=true;
+var ft=0;$("foot").onclick=function(){if(++ft>=5){ft=0;openEd()}};
+</script>
+</body>
+</html>
